@@ -86,7 +86,6 @@ const Token = class {
     this.countelement = document.getElementById(this.id + "count");
   }
   changeCount(add) {
-    console.log("change Count bir kere");
     if (add) {
       this.countelement.innerText = +this.countelement.innerText + 1;
     } else {
@@ -1348,7 +1347,6 @@ let refreshdata;
 //ValidTurn geldi işle
 game.on("refreshStatus", (data) => {
   refreshdata = data;
-  console.log(data);
   //Tokens refresh
   let colors = ["red", "green", "orange", "purple", "blue", "yellow"];
   for (i of colors) {
@@ -1369,17 +1367,17 @@ game.on("refreshStatus", (data) => {
 
   // card update
   let oldcard;
-  let newcard = data.cards;
+  let newcard = [...data.cards];
   for (let i of document.getElementsByClassName("card-div")) {
-    if (data.cards.indexOf(i.id) === -1 && i.id[0] !== "l") {
-      oldcard = i;
-    } else {
-      newcard.splice(newcard.indexOf(i.id), 1);
+    if (i.id[0] !== "l") {
+      if (data.cards.indexOf(i.id) === -1) {
+        oldcard = i;
+      } else {
+        newcard.splice(newcard.indexOf(i.id), 1);
+      }
     }
   }
-  if (newcard[0]) {
-    console.log(newcard);
-    console.log(oldcard);
+  if (newcard.length > 0) {
     oldcard.parentElement.replaceChild(
       card[newcard[0]].create((update = true)),
       oldcard

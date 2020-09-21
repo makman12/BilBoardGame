@@ -940,7 +940,9 @@ const Splendor = class {
     }
     let level = card[cardId].level;
     let newCard = this["level_" + level].splice(0, 1)[0];
+    console.log(this.cardsetup);
     this.cardsetup.splice(indexCard, 1, newCard);
+    console.log(this.cardsetup);
     return true;
   }
 
@@ -1035,6 +1037,7 @@ const Splendor = class {
     data.tokens = this.tokens;
     data.cards = this.cardsetup;
     data.nobles = this.nobles;
+    console.log(data);
     this.sendtoroom("refreshStatus", data);
   };
 };
@@ -1108,7 +1111,6 @@ module.exports = {
       sock.on("SplendorTurn", (data) => {
         console.log("biri splendor oynuyor");
         currentGames[data.roomId].turn(data.turn);
-        console.log(currentGames);
       });
     });
   },
