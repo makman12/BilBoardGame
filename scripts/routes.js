@@ -9,11 +9,19 @@ async function isloggedin(req) {
   let result = await user.isLogged();
   return result;
 }
+// getting gamelist
+
+let gameList = [];
+let gamesFolder = "./games";
+fs.readdirSync(gamesFolder).forEach((file) => {
+  let gameName = file.slice(0, -3);
+  gameList.push(gameName);
+});
 
 router.get("/", async (req, res, next) => {
   console.log("index aranıyor");
   let loggedIn = await isloggedin(req);
-  res.render("index.ejs", { loggedin: loggedIn });
+  res.render("index.ejs", { loggedin: loggedIn, gameList: gameList });
 });
 
 router.get("/login", async (req, res, next) => {

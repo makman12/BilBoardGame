@@ -13,6 +13,7 @@ const api = require("./scripts/api");
 const socketio = require("socket.io");
 const io = socketio(server);
 const PORT = process.env.PORT || 1997;
+const fs = require("fs");
 
 server.listen(PORT);
 
@@ -49,7 +50,12 @@ app.use(express.static(clientPath));
 api.io(io);
 
 //Games
-let gameList = ["splendor"];
+let gameList = [];
+let gamesFolder = "./games";
+fs.readdirSync(gamesFolder).forEach((file) => {
+  let gameName = file.slice(0, -3);
+  gameList.push(gameName);
+});
 
 let games = {};
 gameList.forEach((game) => {

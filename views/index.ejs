@@ -64,13 +64,11 @@
             <div class="input-field col s12">
               <select id="game">
                 <option value="" disabled selected>Choose your option</option>
-                <option value="splendor">Splendor</option>
-                <option value="Codenames">Kod Adı</option>
-                <option value="azul">Azul</option>
-                <option value="tkm">Taş Kağıt Makas</option>
-                <option value="Codenames">Kod Adı</option>
+                <% for( let game of gameList ) { %>
+                <option value="<%= game %> "><%= game %></option>
+                <% } %>
               </select>
-              <label>Materialize Select</label>
+              <label>Oyun Listesi</label>
             </div>
           </form>
         </div>
