@@ -2,7 +2,7 @@ const express = require("express");
 const http = require("http");
 const path = require("path");
 const cookieParser = require("cookie-parser");
-const session = require("cookie-session");
+const session = require("express-session");
 const bodyParser = require("body-parser");
 const app = express();
 const server = http.createServer(app);
@@ -37,7 +37,6 @@ app.use(
   })
 );
 
-console.log("mali");
 app.set("view engine", "ejs");
 
 // Route
