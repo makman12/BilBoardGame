@@ -12,8 +12,9 @@ const routes = require("./scripts/routes");
 const api = require("./scripts/api");
 const socketio = require("socket.io");
 const io = socketio(server);
+const PORT = process.env.PORT || 1997;
 
-server.listen(1997);
+server.listen(PORT);
 
 //Mongo DB
 
