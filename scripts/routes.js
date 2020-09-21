@@ -1,6 +1,6 @@
 const express = require("express");
-const User = require("../models/user");
-const Room = require("../models/room");
+const User = require("../models/User");
+const Room = require("../models/Room");
 const router = express.Router();
 
 async function isloggedin(req) {

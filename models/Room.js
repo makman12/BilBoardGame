@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { findByIdAndDelete } = require("./user");
+const { findByIdAndDelete } = require("./User");
 mongoose.set("useFindAndModify", false);
 
 const roomSchema = new mongoose.Schema({
