@@ -49,8 +49,10 @@ app.use(express.static(clientPath));
 api.io(io);
 
 //Games
+let gameList = ["splendor"];
 
-//Splendor
-const splendor = require("./games/splendor");
-
-splendor.io(io);
+let games = {};
+gameList.forEach((game) => {
+  games[game] = require("./games/" + game);
+  games[game].io(io);
+});
