@@ -13,7 +13,7 @@ const api = require("./scripts/api");
 const socketio = require("socket.io");
 const io = socketio(server);
 
-server.listen(1997);
+server.listen();
 
 //Mongo DB
 
