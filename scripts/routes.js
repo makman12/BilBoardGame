@@ -12,7 +12,7 @@ async function isloggedin(req) {
 
 router.get("/", async (req, res, next) => {
   console.log("index aranıyor");
-  let loggedIn = await isloggedin(req);
+  let loggedIn = false;// await isloggedin(req);
   res.render("index.ejs", { loggedin: loggedIn });
 });
 
