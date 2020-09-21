@@ -36,6 +36,7 @@ app.use(
   })
 );
 
+console.log("mali");
 app.set("view engine", "ejs");
 
 // Route
