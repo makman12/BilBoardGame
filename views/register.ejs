@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kayıt Ol - BilBoard</title>
+    <link rel="stylesheet" href="src/css/register.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!--NavBar-->
+    <nav>
+      <div class="nav-wrapper blue darken-4">
+        <a href="/" class="brand-logo">BilBoard</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="sass.html">Nasıl Oynanır ?</a></li>
+          <li><a href="badges.html">Daha Fazla Kutu Oyunu</a></li>
+        </ul>
+      </div>
+    </nav>
+    <br />
+    <main>
+      <!--Login-->
+      <div>
+        <h3 class="center-align">Üye Ol</h3>
+      </div>
+
+      <div id="register" class="container row">
+        <form id="register-form" action="javascript:mali();">
+          <div class="form-div input-field col s6 offset-s3 card-panel">
+            <input
+              placeholder="Kullanıcı Adı"
+              id="username-input"
+              type="text"
+              class="validate"
+              name="username"
+              required
+            />
+            <input
+              placeholder="E-mail"
+              id="email-input"
+              type="email"
+              class="validate"
+              name="email"
+              required
+            />
+            <input
+              placeholder="Şifre"
+              id="password-input"
+              type="password"
+              class="validate"
+              name="password"
+              minlength="8"
+              required
+            />
+            <input
+              placeholder="Şifre Tekrar"
+              id="re-password-input"
+              type="password"
+              class="validate"
+              minlength="8"
+              required
+            />
+            <p id="warning"></p>
+            <button
+              type="submit"
+              id="register-post"
+              class="col s4 offset-s8 blue darken-1 btn waves-effect waves-light"
+            >
+              Üye Ol
+            </button>
+            <p id="warning"></p>
+          </div>
+        </form>
+      </div>
+    </main>
+    <footer class="page-footer blue lighten-1">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">
+              You can use rows and columns here to organize your footer content.
+            </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2014 Copyright Text
+          <a class="grey-text text-lighten-4 right" id="logout"></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="src/js/register.js"></script>
+</html>

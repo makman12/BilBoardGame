@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BilBoard</title>
+    <link rel="stylesheet" href="src/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+  </head>
+
+  <body>
+    <!--NavBar-->
+    <nav>
+      <div class="nav-wrapper blue darken-4">
+        <a href="/" class="brand-logo">BilBoard</a>
+        <ul class="right hide-on-med-and-down">
+          <% if (loggedin) { %>
+          <li class="blue darken-2">
+            <a href="/account"><%= loggedin.username %> </a>
+          </li>
+          <% } else { %>
+
+          <li><a href="/login">Giriş Yap</a></li>
+          <li><a href="/register">Üye Ol</a></li>
+          <% } %>
+        </ul>
+      </div>
+    </nav>
+    <br />
+    <main>
+      <% if (loggedin) { %>
+      <div id="main" class="row container">
+        <h1 id="welcome" class="center-align"></h1>
+        <div id="rooms" class="col s9 blue lighten-5 row"></div>
+
+        <div id="options" class="col s3">
+          <button
+            data-target="modal1"
+            id="create-room"
+            class="right blue darken-1 btn waves-effect waves-light modal-trigger"
+          >
+            Yeni Oda Oluştur
+          </button>
+        </div>
+      </div>
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Kripto Odası Oluştur</h4>
+          <br />
+          <form id="createNewRoomForm">
+            <div class="input-field col s6">
+              <input id="room-name" type="text" class="validate" />
+              <label for="room-name">Oda İsmi</label>
+            </div>
+            <p>
+              <label>
+                <input type="checkbox" />
+                <span>Yalnızca TDK'de olan kelimeler.</span>
+              </label>
+            </p>
+            <div class="input-field col s12">
+              <select id="game">
+                <option value="" disabled selected>Choose your option</option>
+                <option value="splendor">Splendor</option>
+                <option value="Codenames">Kod Adı</option>
+                <option value="azul">Azul</option>
+                <option value="tkm">Taş Kağıt Makas</option>
+                <option value="Codenames">Kod Adı</option>
+              </select>
+              <label>Materialize Select</label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            class="modal-close right blue darken-1 btn waves-effect waves-light"
+            id="create-room-form"
+          >
+            Oluştur
+          </button>
+        </div>
+      </div>
+      <% } else { %>
+      <h1 class="center-align">Giriş yap yada üye ol</h1>
+      <% } %>
+    </main>
+
+    <footer class="page-footer blue lighten-1">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">
+              You can use rows and columns here to organize your footer content.
+            </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li>
+                <a class="grey-text text-lighten-3" href="/login">Giriş Yap</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2014 Copyright Text <% if (loggedin) { %>
+          <a class="grey-text text-lighten-4 right" id="logout">Çıkış Yap</a>
+          <% } %>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <% if (loggedin) { %>
+  <script src="src/js/index.js"></script>
+  <% } else { %>
+  <script src="src/js/indexguest.js"></script>
+  <% } %>
+</html>

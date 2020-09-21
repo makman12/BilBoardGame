@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BilBoard : <%= room.name %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../src/css/room.css" />
+    <link rel="stylesheet" href="../src/css/games/<%= room.game %>.css" />
+  </head>
+
+  <body>
+    <!--NavBar-->
+    <nav>
+      <div class="nav-wrapper blue darken-4">
+        <a href="/" class="brand-logo">BilBoard</a>
+        <ul class="right hide-on-med-and-down">
+          <li><p id="room-name">Oda : <%= room.name %></p></li>
+          <li><a href="sass.html">Nasıl Oynanır ?</a></li>
+          <li><a href="badges.html">Daha Fazla Kutu Oyunu</a></li>
+        </ul>
+      </div>
+    </nav>
+    <br />
+    <main class="row">
+      <game id="game"> </game>
+      <chat>
+        <div id="chat-div" class="col s9">
+          <ul class="" id="chat-display"></ul>
+          <input type="text" id="chat-input" />
+          <button
+            class="btn waves-effect waves-light"
+            id="chat-send"
+            type="submit"
+            name="action"
+          >
+            Gönder
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+        <div id="user-list" class="col s3 blue lighten-3"></div>
+      </chat>
+    </main>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="../src/js/room.js"></script>
+  <script src="../src/js/games/<%= room.game %>.js"></script>
+</html>
