@@ -1,0 +1,74 @@
+#chat-display {
+  margin: 0% !important;
+  padding: 0% !important;
+}
+
+.chat-box {
+  position: relative;
+  margin: 1% !important;
+  padding: 2% !important;
+  font-size: 3vw;
+}
+
+.chat-time {
+  padding: 1%;
+  position: absolute;
+  right: 1%;
+  bottom: 1%;
+  font-size: 1.7vw;
+}
+
+.username-box {
+  margin: 0vw;
+  margin-left: -1.5vw;
+  padding: 1% !important;
+  font-size: 3vw;
+}
+
+.chat-text {
+  margin: 0vw;
+}
+
+.scrollable {
+  height: 100px;
+  overflow-y: scroll;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+#chat-div {
+  bottom: 0%;
+  right: 0%;
+  width: 40%;
+}
+
+#chat-display {
+  bottom: -100%;
+  right: 0%;
+  max-height: 30vw !important;
+  overflow: scroll;
+  transform: scale(0.5);
+  -webkit-transform-origin-x: 0;
+  -webkit-transform-origin-y: 0;
+}
+
+#chat-display::-webkit-scrollbar {
+  display: none;
+}
+#chat-send {
+  right: 0%;
+}
+
+.chat-box {
+}
+game {
+  width: 100%;
+  height: 80%;
+}
+
+body {
+  height: 100vw;
+}

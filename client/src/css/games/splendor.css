@@ -1,0 +1,173 @@
+.token {
+  background-size: contain;
+  position: relative;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.tokendiv {
+  position: relative !important;
+  top: 1vw !important;
+  padding: 1vw !important;
+  text-align: center !important;
+  font-size: 3rem !important;
+}
+.token-count {
+  position: absolute !important;
+  background-color: white;
+  width: 50%;
+  border-radius: 50%;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#all-tokens {
+  position: relative;
+  left: 3%;
+  border-radius: 10vw;
+  transform: scale(0.3);
+  -webkit-transform-origin-x: 1;
+  -webkit-transform-origin-y: 0;
+}
+
+.token.flat {
+  box-shadow: 0 0 0 0.2em #fff;
+}
+
+.token.iso {
+  transform: perspective(3000px) rotateX(55deg) rotateZ(-40deg);
+  box-shadow: -1px 1px 0px #555, -2px 2px 0px #555, -3px 3px 0px #555,
+    -4px 4px 0px #555, -5px 5px 0px #555, -6px 6px 10px #555;
+}
+
+.token.flat:hover {
+  transform: rotate(90deg);
+}
+
+.token.iso:hover {
+  transform: perspective(3000px) rotateX(55deg) rotateZ(-40deg)
+    translateZ(0.5em);
+}
+
+.splendor-card {
+  border-radius: 0.8vw !important;
+  position: relative;
+  border: #616161 solid 0.1vw;
+  transition: 0.2s ease-out;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.card-div:hover {
+  box-shadow: 2vw 2vw 4vw rgba(38, 38, 38, 0.2);
+  transform: scale(1.6);
+  z-index: 100;
+}
+
+.card-div {
+  position: relative;
+  border-radius: 0.8vw !important;
+  padding: 1px !important;
+  margin: 0px !important;
+}
+.noble-card {
+  border-radius: 0.8vw !important;
+  padding: 1px !important;
+  margin: 0px !important;
+}
+
+#all-cards {
+}
+
+#nobles {
+  position: relative;
+  width: 35% !important;
+}
+
+/* Player Summary */
+.player-summary {
+  border-radius: 30% 15%;
+}
+
+.player-summary-head {
+  border-radius: 0% 20% 0% 0%;
+}
+.player-summary-body {
+  padding: 1%;
+  border-radius: 0% 0% 20% 8%;
+}
+
+.username-wrapper {
+  font-size: 2em;
+  text-shadow: 0.05em 0.05em #000000;
+}
+
+.point-wrapper {
+  border-radius: 10% 30%;
+  border: white solid;
+  font-size: 2em;
+}
+
+.player-summary-card-body {
+  width: 100%;
+  height: 100%;
+}
+
+.player-summary-card {
+  height: 110% !important;
+  font-size: 1.5em;
+  border-radius: 5%;
+}
+
+.player-summary-div {
+  width: 100%;
+  height: 100%;
+  transform: scale(0.7);
+  -webkit-transform-origin-x: 0;
+  -webkit-transform-origin-y: 0;
+}
+
+#token-space {
+  position: relative;
+  border-radius: 10%;
+}
+
+#take-token-btn {
+  position: absolute;
+  bottom: -75% !important;
+  left: 12%;
+  transform: scale(0.7);
+}
+
+.summary-token {
+  top: 0vw !important;
+  padding: 0vw !important;
+  max-height: 4vw !important;
+}
+
+.summary-token-count {
+  background-color: #212121;
+  color: #f5f5f5 !important;
+  position: absolute;
+  width: 150%;
+  top: -20%;
+  left: -25%;
+  transform: translate(0%, 0%);
+}
+
+.buy-button {
+  position: absolute;
+  bottom: 10%;
+  right: 0%;
+  font-size: 1%;
+  padding: 0px !important;
+  margin: 0px !important;
+}
