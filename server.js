@@ -12,27 +12,26 @@ const routes = require("./scripts/routes");
 const api = require("./scripts/api");
 const socketio = require("socket.io");
 const io = socketio(server);
-const PORT = process.env.PORT || 1997;
 const fs = require("fs");
-
-server.listen(PORT);
+require("dotenv").config();
+server.listen(process.env.PORT);
 
 //Mongo DB
 
-mongoose.connect(
-  "mongodb+srv://mali12:19972005@arttimetravel.vvghh.mongodb.net/bilboard?retryWrites=true&w=majority",
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 mongoose.set("useFindAndModify", false);
 
 // app.use
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-const cookie_secret = "malisaddgdsd134";
+
 app.use(
   session({
-    secret: cookie_secret,
+    secret: process.env.COOKIE_SECRET,
     resave: true,
     saveUninitialized: true,
   })
